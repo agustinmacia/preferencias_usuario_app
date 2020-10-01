@@ -11,6 +11,7 @@ class HomePage extends StatelessWidget {
         title: Text('Preferencias del usuario'),
       ),
       body: Column(
+        mainAxisAlignment: MainAxisAlignment.center,
         children: <Widget>[
           Text('Color secundario:'),
           Divider(),
