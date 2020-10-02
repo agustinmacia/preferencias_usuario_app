@@ -1,17 +1,58 @@
 import 'package:flutter/material.dart';
+import 'package:preferencias_usuario_app/src/widgets/menu_widget.dart';
 
-class SettingsPage extends StatelessWidget {
+class SettingsPage extends StatefulWidget {
   
   static final String routeName = 'settings';
 
+  @override
+  _SettingsPageState createState() => _SettingsPageState();
+}
+
+class _SettingsPageState extends State<SettingsPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
         title: Text('Ajustes'),
       ),
-      body: Center(
-        child: Text('Ajustes Page'),
+      drawer: MenuWidget(),
+      body: ListView(
+        children: <Widget>[
+          Container(
+            padding: EdgeInsets.all(5.0),
+            child: Text('Ajustes', style: TextStyle(fontSize: 45.0, fontWeight: FontWeight.bold)),
+          ),
+          Divider(),
+          SwitchListTile(
+            value: true,
+            title: Text('Color Secundario'),
+            onChanged: (valor){},
+          ),
+          RadioListTile(
+            value: 1,
+            title: Text('Masculino'),
+            groupValue: 1,
+            onChanged: (valor){},
+          ),
+          RadioListTile(
+            value: 1,
+            title: Text('Femenino'),
+            groupValue: 2,
+            onChanged: (valor){},
+          ),
+          Divider(),
+          Container(
+            padding: EdgeInsets.symmetric(horizontal: 20.0),
+            child: TextField(
+              decoration: InputDecoration(
+                labelText: 'Nombre',
+                helperText: 'Nombre de la persona usando el telefono'
+              ),
+              onChanged: (valor){},
+            ),
+          ),
+        ],
       )
     );
   }
