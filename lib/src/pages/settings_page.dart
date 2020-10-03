@@ -24,6 +24,8 @@ class _SettingsPageState extends State<SettingsPage> {
   void initState() { 
     super.initState();
 
+    preferencias.ultimaPagina = SettingsPage.routeName;
+
     _genero = preferencias.genero;
     _colorSecundario = preferencias.colorSecundario;
 

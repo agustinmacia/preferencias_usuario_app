@@ -42,5 +42,14 @@ class PreferenciasUsuario{
     _preferences.setBool('colorSecundario', valor);
   }
 
+  //Getter & Setter de la ultima pagina
+
+  get ultimaPagina {
+    return _preferences.getString('ultimaPagina') ?? 'home';
+  }
+
+  set ultimaPagina (String valor) {
+    _preferences.setString('ultimaPagina', valor);
+  }
 
 }
